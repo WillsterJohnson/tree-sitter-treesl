@@ -1,0 +1,808 @@
+[
+  {
+    "type": "choice",
+    "named": true,
+    "fields": {
+      "rule": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "macro_call",
+            "named": true
+          },
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "precedence",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      },
+      "rule": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "choice",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "macro_call",
+            "named": true
+          },
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "precedence",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      },
+      "rule": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "macro_call",
+            "named": true
+          },
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "precedence",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "group",
+    "named": true,
+    "fields": {
+      "rule": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "choice",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "macro_call",
+            "named": true
+          },
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "precedence",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "ident",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "macro",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "macro_ident",
+            "named": true
+          }
+        ]
+      },
+      "template": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "choice",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "macro_call",
+            "named": true
+          },
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "precedence",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "macro_call",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "choice",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "macro_call",
+            "named": true
+          },
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "precedence",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "macro_ident",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "metadata",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "CONFLICTS",
+            "named": false
+          },
+          {
+            "type": "EXTERNALS",
+            "named": false
+          },
+          {
+            "type": "EXTRAS",
+            "named": false
+          },
+          {
+            "type": "INLINE",
+            "named": false
+          },
+          {
+            "type": "NAME",
+            "named": false
+          },
+          {
+            "type": "PRECEDENCES",
+            "named": false
+          },
+          {
+            "type": "SUPERTYPES",
+            "named": false
+          },
+          {
+            "type": "WORD",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "|",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "optional",
+    "named": true,
+    "fields": {
+      "rule": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "choice",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "macro_call",
+            "named": true
+          },
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "precedence",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "precedence",
+    "named": true,
+    "fields": {
+      "assoc": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "D",
+            "named": false
+          },
+          {
+            "type": "L",
+            "named": false
+          },
+          {
+            "type": "R",
+            "named": false
+          }
+        ]
+      },
+      "prec": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "int",
+            "named": true
+          }
+        ]
+      },
+      "rule": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "macro_call",
+            "named": true
+          },
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "precedence",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "program",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "metadata",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "repeated",
+    "named": true,
+    "fields": {
+      "minimum": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "int",
+            "named": true
+          }
+        ]
+      },
+      "rule": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "choice",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "macro_call",
+            "named": true
+          },
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "precedence",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "separator": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "choice",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "ident",
+            "named": true
+          },
+          {
+            "type": "macro_call",
+            "named": true
+          },
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "precedence",
+            "named": true
+          },
+          {
+            "type": "regex",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "@",
+    "named": false
+  },
+  {
+    "type": "CONFLICTS",
+    "named": false
+  },
+  {
+    "type": "D",
+    "named": false
+  },
+  {
+    "type": "EXTERNALS",
+    "named": false
+  },
+  {
+    "type": "EXTRAS",
+    "named": false
+  },
+  {
+    "type": "INLINE",
+    "named": false
+  },
+  {
+    "type": "L",
+    "named": false
+  },
+  {
+    "type": "NAME",
+    "named": false
+  },
+  {
+    "type": "PRECEDENCES",
+    "named": false
+  },
+  {
+    "type": "R",
+    "named": false
+  },
+  {
+    "type": "SUPERTYPES",
+    "named": false
+  },
+  {
+    "type": "WORD",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "int",
+    "named": true
+  },
+  {
+    "type": "macro_ident",
+    "named": true
+  },
+  {
+    "type": "regex",
+    "named": true
+  },
+  {
+    "type": "string",
+    "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]
