@@ -180,7 +180,7 @@ class Compiler {
     return "ERROR"
   }
 
-  /**@param {Cursor}cursor*/
+  /**@param {Cursor} cursor*/
   async $macro(cursor) {
     const content = await this.inspectRule(cursor.node.templateNode, cursor)
     const args = this.argsFor(content)
@@ -190,15 +190,24 @@ class Compiler {
     }
   }
 
+  /**
+   * @param {string} content
+   */
   argsFor(content) {
-    const count = +content
-      .match(/\$\d+/g)
-      .map(arg => arg.slice(1))
-      .sort()
-      .slice(-1)[0]
+    const count = +(
+      content
+        .match(/\$\d+/g)
+        ?.map(arg => arg.slice(1))
+        .sort()
+        .slice(-1)[0] ?? 0
+    )
     return Array.from({ length: count }, (_, i) => `$${i + 1}`)
   }
 
+  /**
+   * @param {string} content
+   * @param {any[]} args
+   */
   subRestSeq(content, args) {
     return content.replace(/\$@/g, `seq(${args.join(", ")})`)
   }
