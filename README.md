@@ -6,6 +6,27 @@ actual DSL for creating tree-sitter grammars.
 It may not be great, it may not conform to any common practices, but it works for me. I hope that it
 might work for you too.
 
+## Install and Use TreeSL
+
+```sh
+npm i -D tree-sitter-treesl
+```
+
+To compile your TreeSL grammar into a tree-sitter grammar, use the `treesl` command.
+
+> [!TIP]
+> If you haven't already, consider adding `./node_modules/.bin` to your `PATH` to avoid the need to
+> run through your package manager (`treesl ...` vs `npx treesl ...`)
+
+```sh
+treesl --output=./grammar.js ./.grammarfile
+```
+
+Both of the above shown arguments are optional, with their default values being the values shown.
+
+You may want to add your `treesl` command to your `package.json` scripts as part of your build
+process.
+
 ## The TreeSL DSL
 
 TreeSL is a really small language based off of tree-sitter's own grammar DSL functions. If you're
