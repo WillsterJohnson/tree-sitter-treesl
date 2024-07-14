@@ -1,10 +1,18 @@
 {
   "name": "tree-sitter-treesl",
   "version": "1.0.0",
-  "description": "",
+  "description": "TreeSL - a DSL for writing tree-sitter grammars",
+  "author": "Willster 'WillsterJohnson' Johnson",
   "license": "GPL-3.0-only",
   "types": "bindings/node",
   "main": "bindings/node",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WillsterJohnson/tree-sitter-treesl"
+  },
+  "bugs": {
+    "url": "https://github.com/WillsterJohnson/tree-sitter-treesl/issues"
+  },
   "bin": {
     "treesl": "compiler/cli.js"
   },
@@ -15,7 +23,16 @@
     "build": "tree-sitter generate && pnpm prebuildify && tree-sitter build",
     "prebuildify": "prebuildify --napi --strip"
   },
-  "keywords": [],
+  "keywords": [
+    "tree-sitter",
+    "tree",
+    "sitter",
+    "treesl",
+    "dsl",
+    "grammar",
+    "compiler",
+    "parser"
+  ],
   "files": [
     "grammar.js",
     "binding.gyp",
