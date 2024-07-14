@@ -1,0 +1,91 @@
+NAME = "treesl"
+
+EXTRAS = _line_comment | /[\s\t\n\r]+/ | "specifically_chosen_to_never_appear"
+
+program = { (declaration | metadata | macro, ["\n"]) }
+
+_line_comment = (";", /[^\r\n\u2028\u2029]*/)
+
+string = /"(\\"|[^"\n\r\u2028\u2029])*"/
+
+int = /0|[1-9][0-9]*/
+
+regex = /\/(\\\/|[^\/\n\r\u2028\u2029])*\/[igm]*/
+
+ident = /[a-z0-9_]+/ | /\$(\d+|@)/
+
+declaration = (name@ident, "=", rule@_rule)
+
+_non_choice_rule =
+  optional   |
+  repeated   |
+  group      |
+  field      |
+  precedence |
+  string     |
+  regex      |
+  ident      |
+  macro_call
+
+
+_rule = _non_choice_rule | choice
+
+; RULES
+
+optional = ("[", rule@_rule, "]")
+
+repeated = ("{", [(minimum@int, ":")], [(separator@_rule, ",")], rule@_rule, "}")
+
+choice = #R2 { 2: "|", rule@_non_choice_rule }
+
+group = ("(", { ",", rule@_rule }, ")")
+
+field = #2 (name@ident, "@", rule@_non_choice_rule)
+
+precedence = #R (
+  (
+    "#",
+    (assoc@["L" | "R" | "D"], prec@int) | (assoc@("L" | "R" | "D"), prec@[int])
+  ),
+  rule@_non_choice_rule
+)
+
+; MACROS
+
+macro_ident = /\$[a-z0-9_]+/
+
+macro = (name@macro_ident, "->", template@_rule)
+
+macro_call = (name@macro_ident, "(", { ",", args@_rule }, ")")
+
+; METADATA
+
+metadata =
+  _meta_name        |
+  _meta_conflicts   |
+  _meta_externals   |
+  _meta_extras      |
+  _meta_inline      |
+  _meta_precedences |
+  _meta_supertypes  |
+  _meta_word
+
+_meta_name = (name@"NAME", "=", value@string)
+
+_meta_conflicts = (name@"CONFLICTS", "=", value@$array_2d(ident))
+
+_meta_externals = (name@"EXTERNALS", "=", value@$array_1d(ident))
+
+_meta_extras = (name@"EXTRAS", "=", value@$array_1d(string | regex | ident))
+
+_meta_inline = (name@"INLINE", "=", value@$array_1d(ident))
+
+_meta_precedences = (name@"PRECEDENCES", "=", value@$array_2d(ident))
+
+_meta_supertypes = (name@"SUPERTYPES", "=", value@$array_1d(ident))
+
+_meta_word = (name@"WORD", "=", value@ident)
+
+$array_2d -> ("(", { ",", $array_1d($1) }, ")")
+
+$array_1d -> { "|", $1 }
