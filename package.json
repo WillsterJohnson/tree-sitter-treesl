@@ -65,7 +65,6 @@
       "file-types": [
         "grammarfile"
       ],
-      "first-line-regex": ";$",
       "highlights": "queries/highlights.scm"
     }
   ]
