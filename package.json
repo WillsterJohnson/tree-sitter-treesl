@@ -1,0 +1,50 @@
+{
+  "name": "tree-sitter-treesl",
+  "version": "1.0.0",
+  "description": "",
+  "license": "GPL-3.0-only",
+  "types": "bindings/node",
+  "main": "bindings/node",
+  "bin": {
+    "treesl": "compiler/cli.js"
+  },
+  "scripts": {
+    "test": "tree-sitter test",
+    "dev": "tree-sitter parse example --debug",
+    "install": "node-gyp-build",
+    "build": "tree-sitter generate && pnpm prebuildify && tree-sitter build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "keywords": [],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "prebuildify": "^6.0.0",
+    "tree-sitter-cli": "^0.22.6"
+  },
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.treesl",
+      "injection-regex": "^treesl$"
+    }
+  ]
+}
