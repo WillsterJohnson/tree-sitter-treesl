@@ -1,0 +1,23 @@
+(string) @string
+(regex) @string.regex
+(int) @number
+(ident) @variable
+(macro_arg) @variable.parameter
+(field name: (ident) @variable.special)
+(macro_ident) @function
+(line_comment) @comment
+"|" @operator
+"=" @operator
+"@" @operator
+"#" @operator
+"->" @operator
+"," @punctuation.list_marker
+"{" @punctuation.bracket
+"}" @punctuation.bracket
+"(" @punctuation.bracket
+")" @punctuation.bracket
+"[" @punctuation.bracket
+"]" @punctuation.bracket
+"L" @string.special.symbol
+"R" @string.special.symbol
+"D" @string.special.symbol

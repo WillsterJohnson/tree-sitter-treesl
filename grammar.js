@@ -5,12 +5,12 @@
 module.exports = grammar({
   name: "treesl",
 
-  extras: $ => [$._line_comment, /[\s\t\n\r]+/],
+  extras: $ => [$.line_comment, /[\s\t\n\r]+/],
 
   rules: {
     program: $ => repeat(seq(choice($.declaration, $.metadata, $.macro), optional("\n"))),
 
-    _line_comment: $ => seq(";", /[^\r\n\u2028\u2029]*/),
+    line_comment: $ => seq(";", /[^\r\n\u2028\u2029]*/),
 
     string: $ => /"(\\"|[^"\n\r\u2028\u2029])*"/,
 
@@ -18,7 +18,11 @@ module.exports = grammar({
 
     regex: $ => /\/(\\\/|[^\/\n\r\u2028\u2029])*\/[igm]*/,
 
-    ident: $ => choice(/[a-z0-9_]+/, /\$(\d+|@)/),
+    ident: $ => choice($.identifier, $.macro_arg),
+
+    identifier: $ => /[a-z0-9_]+/,
+
+    macro_arg: $ => /\$(\d+|@)/,
 
     declaration: $ => seq(field("name", $.ident), "=", field("rule", $._rule)),
 

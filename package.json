@@ -61,7 +61,12 @@
   "tree-sitter": [
     {
       "scope": "source.treesl",
-      "injection-regex": "^treesl$"
+      "injection-regex": "^treesl$",
+      "file-types": [
+        "grammarfile"
+      ],
+      "first-line-regex": ";$",
+      "highlights": "queries/highlights.scm"
     }
   ]
 }

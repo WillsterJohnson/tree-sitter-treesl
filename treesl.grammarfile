@@ -1,10 +1,10 @@
 NAME = "treesl"
 
-EXTRAS = _line_comment | /[\s\t\n\r]+/ | "specifically_chosen_to_never_appear"
+EXTRAS = line_comment | /[\s\t\n\r]+/ | "specifically_chosen_to_never_appear"
 
 program = { (declaration | metadata | macro, ["\n"]) }
 
-_line_comment = (";", /[^\r\n\u2028\u2029]*/)
+line_comment = (";", /[^\r\n\u2028\u2029]*/)
 
 string = /"(\\"|[^"\n\r\u2028\u2029])*"/
 
@@ -12,7 +12,11 @@ int = /0|[1-9][0-9]*/
 
 regex = /\/(\\\/|[^\/\n\r\u2028\u2029])*\/[igm]*/
 
-ident = /[a-z0-9_]+/ | /\$(\d+|@)/
+ident = identifier | $.macro_arg
+
+identifier = /[a-z0-9_]+/
+
+macro_arg = /\$(\d+|@)/
 
 declaration = (name@ident, "=", rule@_rule)
 

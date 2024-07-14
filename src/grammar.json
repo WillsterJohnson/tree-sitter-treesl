@@ -38,7 +38,7 @@
         ]
       }
     },
-    "_line_comment": {
+    "line_comment": {
       "type": "SEQ",
       "members": [
         {
@@ -67,14 +67,22 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "PATTERN",
-          "value": "[a-z0-9_]+"
+          "type": "SYMBOL",
+          "name": "identifier"
         },
         {
-          "type": "PATTERN",
-          "value": "\\$(\\d+|@)"
+          "type": "SYMBOL",
+          "name": "macro_arg"
         }
       ]
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[a-z0-9_]+"
+    },
+    "macro_arg": {
+      "type": "PATTERN",
+      "value": "\\$(\\d+|@)"
     },
     "declaration": {
       "type": "SEQ",
@@ -1077,7 +1085,7 @@
   "extras": [
     {
       "type": "SYMBOL",
-      "name": "_line_comment"
+      "name": "line_comment"
     },
     {
       "type": "PATTERN",
